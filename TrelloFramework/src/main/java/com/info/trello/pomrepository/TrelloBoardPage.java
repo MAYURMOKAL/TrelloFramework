@@ -59,13 +59,15 @@ private WebElement enterListTitleTextfield;
 private WebElement addListButton;
 
 @FindBy (xpath = "//textarea[.='CreatedListOne']/ancestor::div[@class='list js-list-content']")
+//@FindBy (xpath = "//h2[.='CreatedListOne']/ancestor::div[@data-testid='list-wrapper']/div")
 private WebElement listOnePosition;
 
 @FindBy (xpath = "//textarea[.='CreatedListTwo']/ancestor::div[@class='list js-list-content']")
 private WebElement listTwoPosition;
 
 
-
+@FindBy (xpath = "//textarea[.='CreatedListThree']/ancestor::div[@class='list js-list-content']")
+private WebElement listThreePosition;
 
 
 
@@ -136,6 +138,10 @@ public WebElement getListOnePosition() {
 
 public WebElement getListTwoPosition() {
 	return listTwoPosition;
+}
+
+public WebElement getListThreePosition() {
+	return listThreePosition;
 }
 
 
