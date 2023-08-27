@@ -201,7 +201,7 @@ public class TestCases extends BaseClass {
 				"Trello Homepage Title is Not Matched");
 	}
 
-	@Test
+	
 	public void trelloCreateMultipleListInCreatedBoard() throws EncryptedDocumentException, IOException {
 		webdriverUtils.implicitWait(driver);
 		// Verify HomePage using Title
@@ -299,47 +299,45 @@ public class TestCases extends BaseClass {
 	@Test
 	public void trelloCreateMultipleListAndSwapInCreatedBoard()
 			throws EncryptedDocumentException, IOException, InterruptedException {
-//		webdriverUtils.implicitWait(driver);
-//		// Verify HomePage using Title
-//		Assert.assertEquals(webdriverUtils.getTitle(driver), excelUtils.readStringData("Sheet1", 1, 1),
-//				"Trello Homepage Title is Not Matched");
-//		TrelloHomePage homepage = new TrelloHomePage(driver);
-//		// Click On the Login Button
-//		homepage.getLoginOption().click();
-//		// Verify Login Page using URL
-//		Assert.assertEquals(webdriverUtils.getCurrentURL(driver), excelUtils.readStringData("Sheet1", 2, 1),
-//				"Trello LoginPage URL is Not Matched");
-//		// Verify Login Page using Title
-//		Assert.assertEquals(webdriverUtils.getTitle(driver), excelUtils.readStringData("Sheet1", 3, 1),
-//				"Trello LoginPage Title is Not Matched");
-//		TrelloLoginPage loginPage = new TrelloLoginPage(driver);
-//		// Enter email in Email Textfield
-//		loginPage.getEmailTextfield().sendKeys(fileUtils.readCommonData("email"));
-//		// Click on Continue Button
-//		loginPage.getContinueButton().click();
-//		webdriverUtils.waitForCompleteTitle(driver, excelUtils.readStringData("Sheet1", 5, 1));
-//		// Verify Login To Continue Page using URL
-//		Assert.assertTrue(webdriverUtils.getCurrentURL(driver).contains(excelUtils.readStringData("Sheet1", 4, 1)),
-//				"Trello Login To Continue Page URL is Not Matched. Please Enter Valid Email");
-//		// Verify Login To Continue Page using Title
-//		Assert.assertEquals(webdriverUtils.getTitle(driver), excelUtils.readStringData("Sheet1", 5, 1),
-//				"Trello Login To Continue Page Title is Not Matched");
-//		TrelloLoginToContinuePage loginToContinuePage = new TrelloLoginToContinuePage(driver);
-//		webdriverUtils.waitForElementIsClickable(driver, loginToContinuePage.getPasswordTextfield());
-//		// Enter the Password in Password Textfield
-//		loginToContinuePage.getPasswordTextfield().sendKeys(fileUtils.readCommonData("password"));
-//		// Click on Login Button
-//		loginToContinuePage.getLoginButton().click();
-//		webdriverUtils.waitForCompleteTitle(driver, excelUtils.readStringData("Sheet1", 7, 1));
-//		// Verify Profile Boards Page using URL
-//		Assert.assertTrue(webdriverUtils.getCurrentURL(driver).contains("mayurmokal"),
-//				"Trello Profile Boards Page URL is Not Matched");
-//		// Verify Profile Boards Page using Title
-//		Assert.assertEquals(webdriverUtils.getTitle(driver), excelUtils.readStringData("Sheet1", 7, 1),
-//				"Trello Profile Boards Page Title is Not Matched");
+		webdriverUtils.implicitWait(driver);
+		// Verify HomePage using Title
+		Assert.assertEquals(webdriverUtils.getTitle(driver), excelUtils.readStringData("Sheet1", 1, 1),
+				"Trello Homepage Title is Not Matched");
+		TrelloHomePage homepage = new TrelloHomePage(driver);
+		// Click On the Login Button
+		homepage.getLoginOption().click();
+		// Verify Login Page using URL
+		Assert.assertEquals(webdriverUtils.getCurrentURL(driver), excelUtils.readStringData("Sheet1", 2, 1),
+				"Trello LoginPage URL is Not Matched");
+		// Verify Login Page using Title
+		Assert.assertEquals(webdriverUtils.getTitle(driver), excelUtils.readStringData("Sheet1", 3, 1),
+				"Trello LoginPage Title is Not Matched");
+		TrelloLoginPage loginPage = new TrelloLoginPage(driver);
+		// Enter email in Email Textfield
+		loginPage.getEmailTextfield().sendKeys(fileUtils.readCommonData("email"));
+		// Click on Continue Button
+		loginPage.getContinueButton().click();
+		webdriverUtils.waitForCompleteTitle(driver, excelUtils.readStringData("Sheet1", 5, 1));
+		// Verify Login To Continue Page using URL
+		Assert.assertTrue(webdriverUtils.getCurrentURL(driver).contains(excelUtils.readStringData("Sheet1", 4, 1)),
+				"Trello Login To Continue Page URL is Not Matched. Please Enter Valid Email");
+		// Verify Login To Continue Page using Title
+		Assert.assertEquals(webdriverUtils.getTitle(driver), excelUtils.readStringData("Sheet1", 5, 1),
+				"Trello Login To Continue Page Title is Not Matched");
+		TrelloLoginToContinuePage loginToContinuePage = new TrelloLoginToContinuePage(driver);
+		webdriverUtils.waitForElementIsClickable(driver, loginToContinuePage.getPasswordTextfield());
+		// Enter the Password in Password Textfield
+		loginToContinuePage.getPasswordTextfield().sendKeys(fileUtils.readCommonData("password"));
+		// Click on Login Button
+		loginToContinuePage.getLoginButton().click();
+		webdriverUtils.waitForCompleteTitle(driver, excelUtils.readStringData("Sheet1", 7, 1));
+		// Verify Profile Boards Page using URL
+		Assert.assertTrue(webdriverUtils.getCurrentURL(driver).contains("mayurmokal"),
+				"Trello Profile Boards Page URL is Not Matched");
+		// Verify Profile Boards Page using Title
+		Assert.assertEquals(webdriverUtils.getTitle(driver), excelUtils.readStringData("Sheet1", 7, 1),
+				"Trello Profile Boards Page Title is Not Matched");
 		
-		MyFirstScript firstScript = new MyFirstScript();
-		firstScript.TrelloUserLogin();
 		TrelloBoardPage boardPage = new TrelloBoardPage(driver);
 		// Click On Account Option
 		boardPage.getAccountButton().click();
@@ -388,25 +386,24 @@ public class TestCases extends BaseClass {
 		boardPage.getPermanentDeleteBoardDeleteButton().click();
 		Assert.assertTrue(boardPage.getBoardDeletedPopUp().isDisplayed(), "Board is Deleted PopUp is Not Displayed");
 		
-		firstScript.trelloUserLogout();
-//		// Click on Account Button
-//		boardPage.getAccountButton().click();
-//		// Click on Logout Option
-//		boardPage.getLogoutOption().click();
-//		TrelloLogoutFromAtlassian logoutFromAtlassian = new TrelloLogoutFromAtlassian(driver);
-//		Assert.assertTrue(webdriverUtils.getCurrentURL(driver).contains(excelUtils.readStringData("Sheet1", 8, 1)),
-//				"Atlassion Logout Page URL is Not Matched");
-//		// Click on Atlassion Logout Button
-//		Assert.assertEquals(webdriverUtils.getTitle(driver), excelUtils.readStringData("Sheet1", 9, 1),
-//				"Atlassion Logout Page Title is Not Matched");
-//		logoutFromAtlassian.getfinalLogoutButton().click();
-//		// Verify HomePage using URL
-//		webdriverUtils.waitForElementIsClickable(driver, homepage.getLoginOption());
-//		Assert.assertTrue(webdriverUtils.getCurrentURL(driver).contains("home"),
-//				"After Logout HomePage URL is Not Matched");
-//		// Verify HomePage using Title
-//		Assert.assertEquals(webdriverUtils.getTitle(driver), excelUtils.readStringData("Sheet1", 1, 1),
-//				"Trello Homepage Title is Not Matched");
+		// Click on Account Button
+		boardPage.getAccountButton().click();
+		// Click on Logout Option
+		boardPage.getLogoutOption().click();
+		TrelloLogoutFromAtlassian logoutFromAtlassian = new TrelloLogoutFromAtlassian(driver);
+		Assert.assertTrue(webdriverUtils.getCurrentURL(driver).contains(excelUtils.readStringData("Sheet1", 8, 1)),
+				"Atlassion Logout Page URL is Not Matched");
+		// Click on Atlassion Logout Button
+		Assert.assertEquals(webdriverUtils.getTitle(driver), excelUtils.readStringData("Sheet1", 9, 1),
+				"Atlassion Logout Page Title is Not Matched");
+		logoutFromAtlassian.getfinalLogoutButton().click();
+		// Verify HomePage using URL
+		webdriverUtils.waitForElementIsClickable(driver, homepage.getLoginOption());
+		Assert.assertTrue(webdriverUtils.getCurrentURL(driver).contains("home"),
+				"After Logout HomePage URL is Not Matched");
+		// Verify HomePage using Title
+		Assert.assertEquals(webdriverUtils.getTitle(driver), excelUtils.readStringData("Sheet1", 1, 1),
+				"Trello Homepage Title is Not Matched");
 	}
 
 	

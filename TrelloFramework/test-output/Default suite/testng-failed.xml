@@ -7,7 +7,7 @@
         <methods>
           <include name="configAfterMethod"/>
           <include name="configBeforeMethod"/>
-          <include name="trelloCreateMultipleListAndSwapInCreatedBoard"/>
+          <include name="trelloCreateMultipleListInCreatedBoard"/>
         </methods>
       </class> <!-- boards.info.trello.testcases.TestCases -->
     </classes>

@@ -6,146 +6,140 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class TrelloBoardPage {
-WebDriver driver;
+	WebDriver driver;
 
-public TrelloBoardPage(WebDriver driver) {
-	this.driver = driver;
-	PageFactory.initElements(driver, this);
-}
+		//Appearance of the base class driver.	
+	public TrelloBoardPage(WebDriver driver) {
+		// Re-Initialise the current class driver with base class driver.
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
 
-@FindBy (xpath = "//span[.='Create new board']")
-private WebElement createNewBoard;
+	@FindBy(xpath = "//span[.='Create new board']")
+	private WebElement createNewBoard;
 
-@FindBy (xpath = "//div[text()='Board title']/following-sibling::input")
-private WebElement boardTitleTextfield;
+	@FindBy(xpath = "//div[text()='Board title']/following-sibling::input")
+	private WebElement boardTitleTextfield;
 
-@FindBy (xpath = "//button[@data-testid='header-member-menu-button']//descendant::span")
-private WebElement accountButton;
+	@FindBy(xpath = "//button[@data-testid='header-member-menu-button']//descendant::span")
+	private WebElement accountButton;
 
-@FindBy (xpath = "//span[.='Log out']")
-private WebElement logoutOption;
+	@FindBy(xpath = "//span[.='Log out']")
+	private WebElement logoutOption;
 
-@FindBy (xpath = "//button[@aria-label='Show menu']//span[@data-testid='OverflowMenuHorizontalIcon']")
-private WebElement menuButton;
+	@FindBy(xpath = "//button[@aria-label='Show menu']//span[@data-testid='OverflowMenuHorizontalIcon']")
+	private WebElement menuButton;
 
-@FindBy(xpath = "//a[contains(.,'Close board')]")
-private WebElement closeBoardOption;
+	@FindBy(xpath = "//a[contains(.,'Close board')]")
+	private WebElement closeBoardOption;
 
-@FindBy(xpath = "//input[@value='Close']")
-private WebElement closeBoardButton;
+	@FindBy(xpath = "//input[@value='Close']")
+	private WebElement closeBoardButton;
 
-@FindBy (xpath = "//button[.='Permanently delete board']")
-private WebElement permanentDeleteBoardButton;
+	@FindBy(xpath = "//button[.='Permanently delete board']")
+	private WebElement permanentDeleteBoardButton;
 
-@FindBy (xpath = "//button[.='Delete']")
-private WebElement permanentDeleteBoardDeleteButton;
+	@FindBy(xpath = "//button[.='Delete']")
+	private WebElement permanentDeleteBoardDeleteButton;
 
-@FindBy (xpath = "//span[.='Board deleted.']")
-private WebElement BoardDeletedPopUp;
+	@FindBy(xpath = "//span[.='Board deleted.']")
+	private WebElement BoardDeletedPopUp;
 
-@FindBy (xpath = "//p[.='Create']")
-private WebElement createNavigationButton;
+	@FindBy(xpath = "//p[.='Create']")
+	private WebElement createNavigationButton;
 
-@FindBy (xpath = "//button[@data-testid='header-create-board-button']")
-private WebElement createBoardButton;
+	@FindBy(xpath = "//button[@data-testid='header-create-board-button']")
+	private WebElement createBoardButton;
 
-@FindBy (xpath = "//button[@data-testid='create-board-submit-button']")
-private WebElement createBoardCreateButton;
+	@FindBy(xpath = "//button[@data-testid='create-board-submit-button']")
+	private WebElement createBoardCreateButton;
 
-@FindBy (xpath = "//input[@placeholder='Enter list title…']")
-private WebElement enterListTitleTextfield;
+	@FindBy(xpath = "//input[@placeholder='Enter list title…']")
+	private WebElement enterListTitleTextfield;
 
-@FindBy (xpath = "//input[@value='Add list']")
-private WebElement addListButton;
+	@FindBy(xpath = "//input[@value='Add list']")
+	private WebElement addListButton;
 
-@FindBy (xpath = "//textarea[.='CreatedListOne']/ancestor::div[@class='list js-list-content']")
+	@FindBy(xpath = "//textarea[.='CreatedListOne']/ancestor::div[@class='list js-list-content']")
 //@FindBy (xpath = "//h2[.='CreatedListOne']/ancestor::div[@data-testid='list-wrapper']/div")
-private WebElement listOnePosition;
+	private WebElement listOnePosition;
 
-@FindBy (xpath = "//textarea[.='CreatedListTwo']/ancestor::div[@class='list js-list-content']")
-private WebElement listTwoPosition;
+	@FindBy(xpath = "//textarea[.='CreatedListTwo']/ancestor::div[@class='list js-list-content']")
+	private WebElement listTwoPosition;
 
+	@FindBy(xpath = "//textarea[.='CreatedListThree']/ancestor::div[@class='list js-list-content']")
+	private WebElement listThreePosition;
 
-@FindBy (xpath = "//textarea[.='CreatedListThree']/ancestor::div[@class='list js-list-content']")
-private WebElement listThreePosition;
+	public WebElement getCreateNewBoard() {
+		return createNewBoard;
+	}
 
+	public WebElement getBoardTitleTextfield() {
+		return boardTitleTextfield;
+	}
 
+	public WebElement getAccountButton() {
+		return accountButton;
+	}
 
+	public WebElement getLogoutOption() {
+		return logoutOption;
+	}
 
-public WebElement getCreateNewBoard() {
-	return createNewBoard;
-}
+	public WebElement getMenuButton() {
+		return menuButton;
+	}
 
-public WebElement getBoardTitleTextfield() {
-	return boardTitleTextfield;
-}
+	public WebElement getCloseBoardOption() {
+		return closeBoardOption;
+	}
 
-public WebElement getAccountButton() {
-	return accountButton;
-}
+	public WebElement getCloseBoardButton() {
+		return closeBoardButton;
+	}
 
-public WebElement getLogoutOption() {
-	return logoutOption;
-}
+	public WebElement getPermanentDeleteBoardButton() {
+		return permanentDeleteBoardButton;
+	}
 
-public WebElement getMenuButton() {
-	return menuButton;
-}
+	public WebElement getPermanentDeleteBoardDeleteButton() {
+		return permanentDeleteBoardDeleteButton;
+	}
 
-public WebElement getCloseBoardOption() {
-	return closeBoardOption;
-}
+	public WebElement getBoardDeletedPopUp() {
+		return BoardDeletedPopUp;
+	}
 
-public WebElement getCloseBoardButton() {
-	return closeBoardButton;
-}
+	public WebElement getCreateNavigationButton() {
+		return createNavigationButton;
+	}
 
-public WebElement getPermanentDeleteBoardButton() {
-	return permanentDeleteBoardButton;
-}
+	public WebElement getCreateBoardButton() {
+		return createBoardButton;
+	}
 
-public WebElement getPermanentDeleteBoardDeleteButton() {
-	return permanentDeleteBoardDeleteButton;
-}
+	public WebElement getCreateBoardCreateButton() {
+		return createBoardCreateButton;
+	}
 
-public WebElement getBoardDeletedPopUp() {
-	return BoardDeletedPopUp;
-}
+	public WebElement getEnterListTitleTextfield() {
+		return enterListTitleTextfield;
+	}
 
-public WebElement getCreateNavigationButton() {
-	return createNavigationButton;
-}
+	public WebElement getAddListButton() {
+		return addListButton;
+	}
 
-public WebElement getCreateBoardButton() {
-	return createBoardButton;
-}
+	public WebElement getListOnePosition() {
+		return listOnePosition;
+	}
 
-public WebElement getCreateBoardCreateButton() {
-	return createBoardCreateButton;
-}
+	public WebElement getListTwoPosition() {
+		return listTwoPosition;
+	}
 
-public WebElement getEnterListTitleTextfield() {
-	return enterListTitleTextfield;
-}
-
-public WebElement getAddListButton() {
-	return addListButton;
-}
-
-public WebElement getListOnePosition() {
-	return listOnePosition;
-}
-
-public WebElement getListTwoPosition() {
-	return listTwoPosition;
-}
-
-public WebElement getListThreePosition() {
-	return listThreePosition;
-}
-
-
-
-
+	public WebElement getListThreePosition() {
+		return listThreePosition;
+	}
 
 }
