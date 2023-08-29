@@ -15,7 +15,7 @@ import com.info.trello.pomrepository.TrelloLoginPage;
 import com.info.trello.pomrepository.TrelloLoginToContinuePage;
 import com.info.trello.pomrepository.TrelloLogoutFromAtlassian;
 
-public class TestCases extends BaseClass {
+public class TrelloTestCases extends BaseClass {
 
 	@Test
 	public void trelloHomePageCheck() throws EncryptedDocumentException, IOException {
