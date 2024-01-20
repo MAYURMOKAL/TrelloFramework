@@ -37,7 +37,7 @@ public class ExcelUtility {
  * @throws IOException
  */
 	public double readNumericData(String sheetName, int rowIndex, int cellIndex) throws EncryptedDocumentException, IOException {
-		FileInputStream fis = new FileInputStream("./src/test/resources/trelloexceldata.xlsx");
+		FileInputStream fis = new FileInputStream("./src/test/resources/trelloExcelFileData.xlsx");
 		Workbook workbook = WorkbookFactory.create(fis);
 		double value = workbook.getSheet(sheetName).getRow(rowIndex).getCell(cellIndex).getNumericCellValue();
 		return value;

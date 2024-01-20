@@ -17,7 +17,7 @@ public class FileUtilty {
  * @throws IOException
  */
 	public String readCommonData(String key) throws IOException {
-		FileInputStream fis = new FileInputStream("./src/test/resources/trellocommondata.properties");
+		FileInputStream fis = new FileInputStream("./src/test/resources/trelloCommonData.properties");
 		Properties pobj = new Properties();
 		pobj.load(fis);
 		
